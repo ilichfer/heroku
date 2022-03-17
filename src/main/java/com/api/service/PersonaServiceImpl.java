@@ -1,11 +1,16 @@
 package com.api.service;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.stereotype.Service;
 
 import com.api.model.Inscripciones;
@@ -18,6 +23,9 @@ import com.api.service.interfaces.IPersonaService;
 @Service
 public class PersonaServiceImpl implements IPersonaService {
 
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+	
 	@Autowired
 	private IPersonaRepo PersonaRepository;
 	
@@ -55,37 +63,37 @@ public class PersonaServiceImpl implements IPersonaService {
 
 	@Override
 	public Persona buscarEmail(String email) {
-		Persona per = new Persona();
-		try {
-			per= PersonaRepository.findPersonaByEmail(email);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return per;
-		
-		
-//		StringBuilder sql = new StringBuilder();
-//		Persona retorno = new Persona();
+//		Persona per = new Persona();
 //		try {
-//			sql.append("select * from persona " + "where email= '" + email + "'");
-//
-//			retorno = jdbcTemplate.query(sql.toString(), new ResultSetExtractor<Persona>() {
-//				@Override
-//				public Persona extractData(ResultSet rs) throws SQLException, DataAccessException {
-//
-//					while (rs.next())
-//						return new Persona(rs.getInt("id"), rs.getString("nombre"), rs.getString("apellido"),
-//								rs.getInt("documento"), rs.getInt("telefono"), rs.getString("fechanacimiento"),
-//								rs.getString("tipodocumento"), rs.getString("email"), rs.getString("password"));
-//
-//					return null;
-//				}
-//			});
-//
+//			per= PersonaRepository.findPersonaByEmail(email);
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}
-//		return retorno;
+//		return per;
+		
+		
+		StringBuilder sql = new StringBuilder();
+		Persona retorno = new Persona();
+		try {
+			sql.append("select * from persona " + "where email= '" + email + "'");
+
+					retorno = jdbcTemplate.query(sql.toString(), new ResultSetExtractor<Persona>() {
+				@Override
+				public Persona extractData(ResultSet rs) throws SQLException, DataAccessException {
+
+					while (rs.next())
+						return new Persona(rs.getInt("id"), rs.getString("nombre"), rs.getString("apellido"),
+								rs.getInt("documento"), rs.getInt("telefono"), rs.getString("fechanacimiento"),
+								rs.getString("tipodocumento"), rs.getString("email"), rs.getString("password"));
+
+					return null;
+				}
+			});
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return retorno;
 	}
 
 	@Override
