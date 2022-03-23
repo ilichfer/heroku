@@ -35,7 +35,7 @@ public class PersonaRepoImpl{
 		StringBuilder sql = new StringBuilder();
 		Persona retorno = new Persona();
 		try {
-			sql.append("select * from persona where email= " + email );
+			sql.append("select * from persona where email= '" + email+"'" );
 			System.out.println("Consulta sql ===> "+sql.toString());
 
 					retorno = jdbcTemplate.query(sql.toString(), new ResultSetExtractor<Persona>() {
