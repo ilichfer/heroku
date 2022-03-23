@@ -365,64 +365,49 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">[[${msj}]]</h1>
-                    <p class="mb-4">Tabla registradas al curso.</p>
+                    <h1 class="h3 mb-2 text-gray-800">Pagos</h1>
+                    <p class="mb-4">Tabla de Pagos registrados en el sistema.</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">[[${titulo}]]</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Lista de Pagos</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Documento</th>
-                                            <th>Tipo Documento</th>
-                                            <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Telefono</th>
-                                            <th>Fecha Nacimiento</th>
+                                            <th>fecha pago</th>
+                                            <th>valor</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
-                                        <tr th:each="persona, itemStat : ${personas}">
-                                            <td th:text="${persona.documento}">documento</td>
-                                            <td th:text="${persona.tipodocumento}">tipodocumento</td>
-                                            <td th:text="${persona.nombre}">persona</td>
-                                            <td th:text="${persona.apellido}">apellido</td>
-                                            <td th:text="${persona.telefono}">telefono</td>
-                                            <td th:text="${persona.fechanacimiento}">fechanacimiento</td>
-                                            <td >
-                                                <form action="#" th:action="@{/eliminarPersonasCurso(idPersona=${persona.id},idCurso=${idCurso},nombreCurso=${nombreCurso})}" th:if="${delete != false}" method="POST">
-                                                    <button class="btn btn-info btn-circle btn-sm" type="submit"  data-toggle="tooltip" data-placement="right" title="Eliminar del Curso">
-                                                        <i class="fas fa-trash"></i>
-                                                    </button>
-                                                </form>
-                                                <form action="#" th:action="@{/agregarPersonasCurso(idPersona=${persona.id},idCurso=${idCurso},nombreCurso=${nombreCurso})}" th:if="${add != false}" method="POST">
-                                                    <button class="btn btn-info btn-circle btn-sm" type="submit"  data-toggle="tooltip" data-placement="right" title="Agregar al Curso">
-                                                        <i class="fas fa-plus-circle"></i>
-                                                    </button>                                                    
-                                                </form> 
-                                                <form action="#" th:action="@{/buscarPagosCurso(idPersona=${persona.id},idCurso=${idCurso})}" method="POST">
-                                                    <button class="btn btn-info btn-circle btn-sm" type="submit"  data-toggle="tooltip" data-placement="right" title="ver pagos">
-                                                        <i class="fas fa-plus-circle"></i>
-                                                    </button>                                                    
-                                                </form> 
-                                            </td>                                            
+                                        <tr th:each="pago, itemStat : ${pagos}">
+                                            <td th:text="${pago.fechaPago}">fechaInicio</td>
+                                            <td th:text="${pago.valor}">valor</td>
+<!--                                             <td th:text="${curso.valorTotal}">valor</td> -->
+
+<!--                                             <td > -->
+<!--                                                <form action="#" th:action="@{/eliminarCurso(id=${curso.id})}" method="POST"> -->
+<!--                                                     <button class="btn btn-danger btn-circle btn-sm" type="submit"  data-toggle="tooltip" data-placement="right" title="Eliminar Curso"> -->
+<!--                                                         <i class="fas fa-trash"></i> -->
+<!--                                                     </button> -->
+<!--                                                 </form>     -->
+<!--                                                 <form action="#" th:action="@{/editarCurso(id=${curso.id},nombreCurso=${curso.nombreCurso},fechaInicio=${curso.fechaInicio} -->
+<!--                                                 ,fechaFin=${curso.fechaFin},valorTotal=${curso.valorTotal})}" method="POST"> -->
+<!--                                                     <button class="btn btn-info btn-circle btn-sm" type="submit"  data-toggle="tooltip" data-placement="right" title="Editar Curso"> -->
+<!--                                                         <i class="fas fa-pencil"></i> -->
+<!--                                                     </button> -->
+<!--                                                 </form>                                    -->
+<!--                                             </td> -->
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <form action="listarCursos" method="GET">  
-                            <button class="btn btn-primary"  type="submit"  data-toggle="tooltip" data-placement="right" title="Regresar">
-                                <i class="fas fa-undo-alt fa-sm"></i>
-                            </button>                                                 
-                        </form> 
                     </div>
 
                 </div>

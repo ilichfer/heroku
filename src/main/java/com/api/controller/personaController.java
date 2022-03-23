@@ -16,8 +16,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.api.dto.VersiculoDto;
 import com.api.model.Persona;
+import com.api.service.interfaces.IBibliaService;
 import com.api.service.interfaces.IPersonaService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 
 
 @Controller
@@ -26,6 +30,9 @@ public class personaController {
 
 	@Autowired
 	private IPersonaService personaService;
+	
+	@Autowired
+	private IBibliaService bibliaService;
 
 	List<Persona> personasList;
 
@@ -71,12 +78,17 @@ public class personaController {
 	}
 
 	@PostMapping("/login")
-	public String login(@ModelAttribute Persona persona, HttpServletResponse response, Model model) {
+	public String login(@ModelAttribute Persona persona, HttpServletResponse response, Model model) throws JsonMappingException, JsonProcessingException {
 		Persona per = personaService.buscarEmail(persona.getEmail());
+		VersiculoDto dia =bibliaService.findVerseDay();
+		model.addAttribute("persona", per);
+		model.addAttribute("dia", dia);
+		
 		String url = "redirect:/404.html";
 		if (per != null
 				&& (persona.getEmail().equals(per.getEmail()) && persona.getPassword().equals(per.getPassword()))) {
-			url = "redirect:/index2.html";
+//			url = "redirect:/index2.html";
+			url = "index2";
 		}
 		return url;
 	}
