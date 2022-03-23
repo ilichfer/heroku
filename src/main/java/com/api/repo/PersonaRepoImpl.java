@@ -36,6 +36,7 @@ public class PersonaRepoImpl{
 		Persona retorno = new Persona();
 		try {
 			sql.append("select * from persona where email= " + email );
+			System.out.println("Consulta sql ===> "+sql.toString());
 
 					retorno = jdbcTemplate.query(sql.toString(), new ResultSetExtractor<Persona>() {
 				@Override
@@ -67,7 +68,7 @@ public class PersonaRepoImpl{
 						+ "join curso c on i.id_curso = c.id " 
 						+ "where c.id =" + idcurso
 						+ "");
-
+			System.out.println("personas de un curso === >"+sql.toString());
 			retorno = jdbcTemplate.query(sql.toString(), new ResultSetExtractor<Persona>() {
 				@Override
 				public Persona extractData(ResultSet rs) throws SQLException, DataAccessException {
