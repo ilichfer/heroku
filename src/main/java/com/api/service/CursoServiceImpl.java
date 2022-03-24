@@ -45,11 +45,11 @@ public class CursoServiceImpl implements ICursoService {
 	}
 
 	@Override
-	public Optional<Curso> findProductoById(Integer id) {
+	public Curso findProductoById(Integer id) {
 
 		Optional<Curso> curso = cursoRepository.findById(id);
 
-		return curso;
+		return curso.get();
 	}
 
 	@Override

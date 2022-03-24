@@ -14,7 +14,7 @@ public interface ICursoService {
 
 	public Curso save(CursoDto curso) throws ParseException, com.sun.el.parser.ParseException;
 
-	public Optional<Curso> findProductoById(Integer id);
+	public Curso findProductoById(Integer id);
 	
 	public Curso delete(Curso curso);
 

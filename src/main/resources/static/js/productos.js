@@ -3,6 +3,7 @@ $(document).ready(function() {
 
 	alert(productos);
 	cargarProductos();
+	square(5);
 
   $('#productosTable').DataTable();
 });
@@ -20,4 +21,9 @@ async function cargarProductos(){
 
   console.log(content);
 
+}
+
+async function square(number) {
+  return number * number;
+  alert(number);
 }

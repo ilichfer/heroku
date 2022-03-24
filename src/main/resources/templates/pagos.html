@@ -368,12 +368,31 @@
                     <h1 class="h3 mb-2 text-gray-800">Pagos</h1>
                     <p class="mb-4">Tabla de Pagos registrados en el sistema.</p>
 
+						<div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                valor Curso</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+												<p th:text="'$ '+ ${curso.valorTotal}" />
+											</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Lista de Pagos</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Lista de Pagos Realizados</h6>
                         </div>
-                        <div class="card-body">
+						
+						<div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
@@ -405,9 +424,20 @@
 <!--                                             </td> -->
                                         </tr>
                                     </tbody>
-                                </table>
+									<tfoot>
+										<tr>
+											<td colspan="2">Total Pagado</td>
+											<td th:text="'$ '+ ${pagoTotal}">valor</td>
+										</tr>
+									</tfoot>
+								</table>
                             </div>
                         </div>
+                         <form action="listarCursos" method="GET">  
+                            <button class="btn btn-primary"  type="submit"  data-toggle="tooltip" data-placement="right" title="Regresar">
+                                <i class="fas fa-undo-alt fa-sm"></i>
+                            </button>                                                 
+                        </form>
                     </div>
 
                 </div>

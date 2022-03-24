@@ -1,17 +1,16 @@
 package com.api.controller;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.api.dto.CursoDto;
 import com.api.model.Curso;
 import com.api.model.Pago;
+import com.api.service.interfaces.ICursoService;
 import com.api.service.interfaces.IPagoService;
 
 @Controller
@@ -26,6 +26,9 @@ import com.api.service.interfaces.IPagoService;
 public class PagoController {
 	@Autowired
 	private IPagoService pagoService;
+	
+	@Autowired
+	private ICursoService cursoService;
 
 	List<Pago> pagoList;
 
@@ -39,8 +42,20 @@ public class PagoController {
 	@PostMapping("/buscarPagosCurso")
 	public String buscarPagosCurso(@RequestParam int idPersona, @RequestParam int idCurso, Model model) {
 
+		Curso curso = cursoService.findProductoById(idCurso);
 		pagoList = pagoService.findPagosByIdCurso(idPersona, idCurso);
+		int pagoTotal = 0;
+		BigDecimal big = new BigDecimal(0);
+		if (big.compareTo(BigDecimal.ZERO) == 1) {
+			System.out.println("==================== entro a metodo zero");
+		}
+		
+		for (Pago pago : pagoList) {
+			pagoTotal = pagoTotal +pago.getValor();
+		}
 		model.addAttribute("pagos", pagoList);
+		model.addAttribute("curso", curso);
+		model.addAttribute("pagoTotal", pagoTotal);
 		return "pagos";
 
 	}
