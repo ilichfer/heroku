@@ -53,7 +53,7 @@ public class CursoController {
 		return url;
 	}
 
-	@PostMapping("/eliminarCurso")
+	@GetMapping("/eliminarCurso")
 	public String deleteProductoById(@ModelAttribute Curso curso, HttpServletResponse response,
 			Model model) {	
 		cursoService.delete(curso);
@@ -71,7 +71,7 @@ public class CursoController {
 		return url;
 	}	
 	
-	@PostMapping("/editarCurso")
+	@GetMapping("/editarCurso")
 	public String editarCursoById(@ModelAttribute CursoDto curso, HttpServletResponse response,
 			Model model) throws ParseException, com.sun.el.parser.ParseException {	
 		Curso cursoMostrar = new Curso();

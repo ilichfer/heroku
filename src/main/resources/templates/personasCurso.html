@@ -366,7 +366,7 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">[[${msj}]]</h1>
-                    <p class="mb-4">Tabla registradas al curso.</p>
+                    <p class="mb-4">Tabla de personas registradas al curso.</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -378,6 +378,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                        	<th>id Curso</th>
                                             <th>Documento</th>
                                             <th>Tipo Documento</th>
                                             <th>Nombre</th>
@@ -390,6 +391,7 @@
 
                                     <tbody>
                                         <tr th:each="persona, itemStat : ${personas}">
+                                        	<td th:text="${idCurso}">documento</td>
                                             <td th:text="${persona.documento}">documento</td>
                                             <td th:text="${persona.tipodocumento}">tipodocumento</td>
                                             <td th:text="${persona.nombre}">persona</td>
@@ -397,21 +399,36 @@
                                             <td th:text="${persona.telefono}">telefono</td>
                                             <td th:text="${persona.fechanacimiento}">fechanacimiento</td>
                                             <td >
-                                                <form action="#" th:action="@{/eliminarPersonasCurso(idPersona=${persona.id},idCurso=${idCurso},nombreCurso=${nombreCurso})}" th:if="${delete != false}" method="POST">
-                                                    <button class="btn btn-info btn-circle btn-sm" type="submit"  data-toggle="tooltip" data-placement="right" title="Eliminar del Curso">
-                                                        <i class="fas fa-trash"></i>
-                                                    </button>
-                                                </form>
-                                                <form action="#" th:action="@{/agregarPersonasCurso(idPersona=${persona.id},idCurso=${idCurso},nombreCurso=${nombreCurso})}" th:if="${add != false}" method="POST">
-                                                    <button class="btn btn-info btn-circle btn-sm" type="submit"  data-toggle="tooltip" data-placement="right" title="Agregar al Curso">
-                                                        <i class="fas fa-plus-circle"></i>
-                                                    </button>                                                    
-                                                </form> 
-                                                <form action="#" th:action="@{/buscarPagosCurso(idPersona=${persona.id},idCurso=${idCurso})}" method="POST">
-                                                    <button class="btn btn-info btn-circle btn-sm" type="submit"  data-toggle="tooltip" data-placement="right" title="ver pagos">
-                                                        <i class="fas fa-plus-circle"></i>
-                                                    </button>                                                    
-                                                </form> 
+                                            
+                                            <a class="btn btn-danger btn-circle btn-sm" th:href="@{/eliminarPersonasCurso(idPersona=${persona.id},idCurso=${idCurso},nombreCurso=${nombreCurso})}" th:if="${delete != false}" 
+                                              type="submit"  data-toggle="tooltip" data-placement="right" title="Eliminar del Curso"> 
+												<i class="fas fa-trash"></i>
+											</a>
+											<a class="btn btn-primary btn-circle btn-sm" th:href="@{/agregarPersonasCurso(idPersona=${persona.id},idCurso=${idCurso},nombreCurso=${nombreCurso})}" th:if="${add != false}"
+												type="submit"  data-toggle="tooltip" data-placement="right" title="Agregar al Curso" > 
+												<i class="fas fa-plus-circle"></i>
+											</a>
+											<a class="btn btn-success btn-circle btn-sm" th:href="@{/buscarPagosCurso(idPersona=${persona.id},idCurso=${idCurso})}"
+											type="submit"  data-toggle="tooltip" data-placement="right" title="ver pagos" > 
+												<i class="fas fa-money-bill-alt"></i>
+											</a>
+											
+                                            
+<!--                                                 <form action="#" th:action="@{/eliminarPersonasCurso(idPersona=${persona.id},idCurso=${idCurso},nombreCurso=${nombreCurso})}" th:if="${delete != false}" method="POST"> -->
+<!--                                                     <button class="btn btn-info btn-circle btn-sm" type="submit"  data-toggle="tooltip" data-placement="right" title="Eliminar del Curso"> -->
+<!--                                                         <i class="fas fa-trash"></i> -->
+<!--                                                     </button> -->
+<!--                                                 </form> -->
+<!--                                                 <form action="#" th:action="@{/agregarPersonasCurso(idPersona=${persona.id},idCurso=${idCurso},nombreCurso=${nombreCurso})}" th:if="${add != false}" method="POST"> -->
+<!--                                                     <button class="btn btn-info btn-circle btn-sm" type="submit"  data-toggle="tooltip" data-placement="right" title="Agregar al Curso"> -->
+<!--                                                         <i class="fas fa-plus-circle"></i> -->
+<!--                                                     </button>                                                     -->
+<!--                                                 </form>  -->
+<!--                                                 <form action="#" th:action="@{/buscarPagosCurso(idPersona=${persona.id},idCurso=${idCurso})}" method="POST"> -->
+<!--                                                     <button class="btn btn-info btn-circle btn-sm" type="submit"  data-toggle="tooltip" data-placement="right" title="ver pagos"> -->
+<!--                                                         <i class="fas fa-plus-circle"></i> -->
+<!--                                                     </button>                                                     -->
+<!--                                                 </form>  -->
                                             </td>                                            
                                         </tr>
                                     </tbody>

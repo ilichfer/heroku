@@ -397,11 +397,14 @@
                                             <td th:text="${persona.telefono}">telefono</td>
                                             <td th:text="${persona.fechanacimiento}">fechanacimiento</td>
                                             <td >
-                                                <form action="#" th:action="@{/eliminar(id=${persona.id})}" method="POST">
-                                                    <button class="btn btn-info btn-circle btn-sm" type="submit" >
-                                                        <i class="fas fa-trash"></i>
-                                                    </button>
-                                                </form>
+                                            	<a class="btn btn-info btn-circle btn-sm" th:href="@{/eliminar(id=${persona.id})}"> 
+													<i class="fas fa-trash"></i>
+												</a>
+<!--                                                 <form action="#" th:action="@{/eliminar(id=${persona.id})}" method="POST"> -->
+<!--                                                     <button class="btn btn-info btn-circle btn-sm" type="submit" > -->
+<!--                                                         <i class="fas fa-trash"></i> -->
+<!--                                                     </button> -->
+<!--                                                 </form> -->
                                             </td>
 
                                         </tr>

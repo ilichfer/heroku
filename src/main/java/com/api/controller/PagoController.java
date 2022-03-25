@@ -39,7 +39,7 @@ public class PagoController {
 		return "cursos";
 	}
 
-	@PostMapping("/buscarPagosCurso")
+	@GetMapping("/buscarPagosCurso")
 	public String buscarPagosCurso(@RequestParam int idPersona, @RequestParam int idCurso, Model model) {
 
 		Curso curso = cursoService.findProductoById(idCurso);

@@ -378,7 +378,6 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Id</th>
                                             <th>nombre curso</th>
                                             <th>fecha inicio</th>
                                             <th>fecha fin</th>
@@ -389,34 +388,28 @@
 
                                     <tbody>
                                         <tr th:each="curso, itemStat : ${cursos}">
-                                            <td th:text="${curso.id}">id</td>
                                             <td th:text="${curso.nombreCurso}">nombreCurso</td>
                                             <td th:text="${curso.fechaInicio}">fechaInicio</td>
                                             <td th:text="${curso.fechaFin}">fechaFin</td>
                                             <td th:text="${curso.valorTotal}">valor</td>
 
                                             <td >
-                                               <form action="#" th:action="@{/eliminarCurso(id=${curso.id})}" method="POST">
-                                                    <button class="btn btn-danger btn-circle btn-sm" type="submit"  data-toggle="tooltip" data-placement="right" title="Eliminar Curso">
-                                                        <i class="fas fa-trash"></i>
-                                                    </button>
-                                                </form>
-                                                <form action="#" th:action="@{/personasCurso(idCurso=${curso.id},nombreCurso=${curso.nombreCurso} )}" method="POST">
-                                                    <button class="btn btn-info btn-circle btn-sm" type="submit"  data-toggle="tooltip" data-placement="right" title="Inscritos al Curso">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
-                                                </form>     
-                                                <form action="#" th:action="@{/buscarPersonasSinCurso(idCurso=${curso.id},nombreCurso=${curso.nombreCurso})}" method="POST">
-                                                    <button class="btn btn-info btn-circle btn-sm" type="submit"  data-toggle="tooltip" data-placement="right" title="Agregar a Curso">
-                                                        <i class="fas fa-plus-circle"></i>
-                                                    </button>
-                                                </form>      
-                                                <form action="#" th:action="@{/editarCurso(id=${curso.id},nombreCurso=${curso.nombreCurso},fechaInicio=${curso.fechaInicio}
-                                                ,fechaFin=${curso.fechaFin},valorTotal=${curso.valorTotal})}" method="POST">
-                                                    <button class="btn btn-info btn-circle btn-sm" type="submit"  data-toggle="tooltip" data-placement="right" title="Editar Curso">
-                                                        <i class="fas fa-pencil"></i>
-                                                    </button>
-                                                </form>                                   
+                                            <a class="btn btn-danger btn-circle btn-sm" th:href="@{/eliminarCurso(id=${curso.id})}" type="submit"  data-toggle="tooltip" data-placement="right" title="Eliminar Curso"> 
+												<i class="fas fa-trash"></i>
+											</a>
+											<a th:href="@{/personasCurso(idCurso=${curso.id},nombreCurso=${curso.nombreCurso} )}" 
+												class="btn btn-primary btn-circle btn-sm" type="submit"  data-toggle="tooltip" data-placement="right" title="Inscritos al Curso"> 
+												<i class="fas fa-eye"></i>
+											</a>
+											<a class="btn btn-success btn-circle btn-sm" th:href="@{/buscarPersonasSinCurso(idCurso=${curso.id},nombreCurso=${curso.nombreCurso})}"
+											 	type="submit"  data-toggle="tooltip" data-placement="right" title="Agregar a Curso" > 
+												<i class="fas fa-plus-circle"></i>
+											</a>
+											<a class="btn btn-info btn-circle btn-sm" th:href="@{/editarCurso(id=${curso.id},nombreCurso=${curso.nombreCurso},fechaInicio=${curso.fechaInicio}
+                                                ,fechaFin=${curso.fechaFin},valorTotal=${curso.valorTotal})}"  type="submit"  data-toggle="tooltip" data-placement="right" title="Editar Curso"> 
+												<i class='fas fa-pencil-alt'></i>
+											</a>
+                                                                                                                       
                                             </td>
                                         </tr>
                                     </tbody>

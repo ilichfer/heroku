@@ -61,7 +61,7 @@ public class personaController {
 		return url;
 	}
 
-	@PostMapping("/eliminar")
+	@GetMapping("/eliminar")
 	public String deleteProductoById(@ModelAttribute Persona persona, HttpServletResponse response,
 			Model model) {
 		persona.setId(persona.getId());
@@ -93,7 +93,7 @@ public class personaController {
 		return url;
 	}
 	
-	@PostMapping("/personasCurso")
+	@GetMapping("/personasCurso")
 	public String personasCurso(@RequestParam int idCurso,@RequestParam String nombreCurso,
 			Model model) {
 		personasList = personaService.findAllByCurso( idCurso);
@@ -107,7 +107,7 @@ public class personaController {
 		return "personasCurso";
 	}
 	
-	@PostMapping("/buscarPersonasSinCurso")
+	@GetMapping("/buscarPersonasSinCurso")
 	public String buscarPersonasSinCurso(@RequestParam int idCurso,@RequestParam String nombreCurso,
 			Model model) {
 		personasList = personaService.buscarTodosSinCurso(idCurso);
@@ -121,7 +121,7 @@ public class personaController {
 		return "personasCurso";
 	}
 	
-	@PostMapping("/eliminarPersonasCurso")
+	@GetMapping("/eliminarPersonasCurso")
 	public String eliminarPersonasCurso(@RequestParam int idPersona,@RequestParam int idCurso,@RequestParam String nombreCurso,
 		Model model) {
 		personaService.eliminarPersonaCurso(idPersona,idCurso);
@@ -131,10 +131,11 @@ public class personaController {
 		model.addAttribute("titulo", "Lista de Personas inscritas");
 		model.addAttribute("add", false);
 		model.addAttribute("delete", true);
+		model.addAttribute("idCurso", idCurso);
 		return "personasCurso";
 	}
 	
-	@PostMapping("/agregarPersonasCurso")
+	@GetMapping("/agregarPersonasCurso")
 	public String AgregarPersonasCurso(@RequestParam int idPersona,@RequestParam int idCurso,@RequestParam String nombreCurso,
 			Model model) {
 		personaService.agregarPersonaCurso(idPersona,idCurso);
@@ -144,6 +145,7 @@ public class personaController {
 		model.addAttribute("titulo", "Lista de Personas inscritas");
 		model.addAttribute("add", false);
 		model.addAttribute("delete", true);
+		model.addAttribute("idCurso", idCurso);
 		return "personasCurso";
 	}
 
