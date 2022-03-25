@@ -51,11 +51,14 @@ public class personaController {
 	}
 
 	@PostMapping("/save")
-	public String save(@ModelAttribute Persona persona) {
+	public String save(@ModelAttribute Persona persona, HttpServletResponse response, Model model) throws JsonMappingException, JsonProcessingException {
 		Persona per = personaService.buscarEmail(persona.getEmail());
+		VersiculoDto dia =bibliaService.findVerseDay();
 		String url = "redirect:/404.html";
+		model.addAttribute("dia", dia);
 		if (per == null || per.getEmail() == null) {
 			Persona personaSave = personaService.save(persona);
+			model.addAttribute("persona", persona);
 			url = "index2";
 		}
 		return url;
