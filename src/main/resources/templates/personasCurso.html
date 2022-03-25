@@ -378,7 +378,6 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                        	<th>id Curso</th>
                                             <th>Documento</th>
                                             <th>Tipo Documento</th>
                                             <th>Nombre</th>
@@ -391,7 +390,6 @@
 
                                     <tbody>
                                         <tr th:each="persona, itemStat : ${personas}">
-                                        	<td th:text="${idCurso}">documento</td>
                                             <td th:text="${persona.documento}">documento</td>
                                             <td th:text="${persona.tipodocumento}">tipodocumento</td>
                                             <td th:text="${persona.nombre}">persona</td>

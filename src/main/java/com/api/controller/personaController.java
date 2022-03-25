@@ -54,9 +54,9 @@ public class personaController {
 	public String save(@ModelAttribute Persona persona) {
 		Persona per = personaService.buscarEmail(persona.getEmail());
 		String url = "redirect:/404.html";
-		if (per.getEmail() == null) {
+		if (per == null || per.getEmail() == null) {
 			Persona personaSave = personaService.save(persona);
-			url = "redirect:/index2.html";
+			url = "index2";
 		}
 		return url;
 	}

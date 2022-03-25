@@ -46,10 +46,10 @@ public class Persona implements Serializable {
     private String apellido;
 
     @Column(name = "documento")
-    private int documento;
+    private Integer documento;
     
     @Column(name = "telefono")
-    private int telefono;
+    private Integer telefono;
     
     @Column(name = "fechanacimiento")
     private String fechanacimiento;
@@ -90,19 +90,19 @@ public class Persona implements Serializable {
 		this.apellido = apellido;
 	}
 
-	public int getDocumento() {
+	public Integer getDocumento() {
 		return documento;
 	}
 
-	public void setDocumento(int documento) {
+	public void setDocumento(Integer documento) {
 		this.documento = documento;
 	}
 
-	public int getTelefono() {
+	public Integer getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(Integer telefono) {
 		this.telefono = telefono;
 	}
 
