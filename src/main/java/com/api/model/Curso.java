@@ -41,9 +41,6 @@ public class Curso implements Serializable {
     @Column(name = "id")
     private int id;
     
-    @Column(name = "idpersona")
-    private int idPersona;
-
     @Column(name = "idpago")
     private int idPago;
 
@@ -70,13 +67,6 @@ public class Curso implements Serializable {
 		this.id = id;
 	}
 
-	public int getIdPersona() {
-		return idPersona;
-	}
-
-	public void setIdPersona(int idPersona) {
-		this.idPersona = idPersona;
-	}
 
 	public int getIdPago() {
 		return idPago;
