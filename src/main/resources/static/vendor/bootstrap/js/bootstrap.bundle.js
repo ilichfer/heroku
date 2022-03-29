@@ -326,7 +326,7 @@
     } // Static
     ;
 
-    Alert._jQueryInterface = function _jQueryInterface(config) {
+    Alert._jQueryAdministrar = function _jQueryAdministrar(config) {
       return this.each(function () {
         var $element = $__default['default'](this);
         var data = $element.data(DATA_KEY);
@@ -375,12 +375,12 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME] = Alert._jQueryInterface;
+  $__default['default'].fn[NAME] = Alert._jQueryAdministrar;
   $__default['default'].fn[NAME].Constructor = Alert;
 
   $__default['default'].fn[NAME].noConflict = function () {
     $__default['default'].fn[NAME] = JQUERY_NO_CONFLICT;
-    return Alert._jQueryInterface;
+    return Alert._jQueryAdministrar;
   };
 
   /**
@@ -478,7 +478,7 @@
     } // Static
     ;
 
-    Button._jQueryInterface = function _jQueryInterface(config, avoidTriggerChange) {
+    Button._jQueryAdministrar = function _jQueryAdministrar(config, avoidTriggerChange) {
       return this.each(function () {
         var $element = $__default['default'](this);
         var data = $element.data(DATA_KEY$1);
@@ -532,7 +532,7 @@
       }
 
       if (initialButton.tagName === 'INPUT' || button.tagName !== 'LABEL') {
-        Button._jQueryInterface.call($__default['default'](button), 'toggle', initialButton.tagName === 'INPUT');
+        Button._jQueryAdministrar.call($__default['default'](button), 'toggle', initialButton.tagName === 'INPUT');
       }
     }
   }).on(EVENT_FOCUS_BLUR_DATA_API, SELECTOR_DATA_TOGGLE_CARROT, function (event) {
@@ -574,12 +574,12 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$1] = Button._jQueryInterface;
+  $__default['default'].fn[NAME$1] = Button._jQueryAdministrar;
   $__default['default'].fn[NAME$1].Constructor = Button;
 
   $__default['default'].fn[NAME$1].noConflict = function () {
     $__default['default'].fn[NAME$1] = JQUERY_NO_CONFLICT$1;
-    return Button._jQueryInterface;
+    return Button._jQueryAdministrar;
   };
 
   /**
@@ -1074,7 +1074,7 @@
     } // Static
     ;
 
-    Carousel._jQueryInterface = function _jQueryInterface(config) {
+    Carousel._jQueryAdministrar = function _jQueryAdministrar(config) {
       return this.each(function () {
         var data = $__default['default'](this).data(DATA_KEY$2);
 
@@ -1127,7 +1127,7 @@
         config.interval = false;
       }
 
-      Carousel._jQueryInterface.call($__default['default'](target), config);
+      Carousel._jQueryAdministrar.call($__default['default'](target), config);
 
       if (slideIndex) {
         $__default['default'](target).data(DATA_KEY$2).to(slideIndex);
@@ -1164,7 +1164,7 @@
     for (var i = 0, len = carousels.length; i < len; i++) {
       var $carousel = $__default['default'](carousels[i]);
 
-      Carousel._jQueryInterface.call($carousel, $carousel.data());
+      Carousel._jQueryAdministrar.call($carousel, $carousel.data());
     }
   });
   /**
@@ -1173,12 +1173,12 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$2] = Carousel._jQueryInterface;
+  $__default['default'].fn[NAME$2] = Carousel._jQueryAdministrar;
   $__default['default'].fn[NAME$2].Constructor = Carousel;
 
   $__default['default'].fn[NAME$2].noConflict = function () {
     $__default['default'].fn[NAME$2] = JQUERY_NO_CONFLICT$2;
-    return Carousel._jQueryInterface;
+    return Carousel._jQueryAdministrar;
   };
 
   /**
@@ -1305,7 +1305,7 @@
       }
 
       if (actives) {
-        Collapse._jQueryInterface.call($__default['default'](actives).not(this._selector), 'hide');
+        Collapse._jQueryAdministrar.call($__default['default'](actives).not(this._selector), 'hide');
 
         if (!activesData) {
           $__default['default'](actives).data(DATA_KEY$3, null);
@@ -1452,7 +1452,7 @@
       return selector ? document.querySelector(selector) : null;
     };
 
-    Collapse._jQueryInterface = function _jQueryInterface(config) {
+    Collapse._jQueryAdministrar = function _jQueryAdministrar(config) {
       return this.each(function () {
         var $element = $__default['default'](this);
         var data = $element.data(DATA_KEY$3);
@@ -1513,7 +1513,7 @@
       var data = $target.data(DATA_KEY$3);
       var config = data ? 'toggle' : $trigger.data();
 
-      Collapse._jQueryInterface.call($target, config);
+      Collapse._jQueryAdministrar.call($target, config);
     });
   });
   /**
@@ -1522,12 +1522,12 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$3] = Collapse._jQueryInterface;
+  $__default['default'].fn[NAME$3] = Collapse._jQueryAdministrar;
   $__default['default'].fn[NAME$3].Constructor = Collapse;
 
   $__default['default'].fn[NAME$3].noConflict = function () {
     $__default['default'].fn[NAME$3] = JQUERY_NO_CONFLICT$3;
-    return Collapse._jQueryInterface;
+    return Collapse._jQueryAdministrar;
   };
 
   /**!
@@ -4120,7 +4120,7 @@
   }();
 
   /**
-   * The `referenceObject` is an object that provides an interface compatible with Popper.js
+   * The `referenceObject` is an object that provides an Administrar compatible with Popper.js
    * and lets you use it as replacement of a real DOM node.<br />
    * You can use this method to position a popper relatively to a set of coordinates
    * in case you don't have a DOM node to use as reference.
@@ -4457,7 +4457,7 @@
     } // Static
     ;
 
-    Dropdown._jQueryInterface = function _jQueryInterface(config) {
+    Dropdown._jQueryAdministrar = function _jQueryAdministrar(config) {
       return this.each(function () {
         var data = $__default['default'](this).data(DATA_KEY$4);
 
@@ -4640,7 +4640,7 @@
     event.preventDefault();
     event.stopPropagation();
 
-    Dropdown._jQueryInterface.call($__default['default'](this), 'toggle');
+    Dropdown._jQueryAdministrar.call($__default['default'](this), 'toggle');
   }).on(EVENT_CLICK_DATA_API$4, SELECTOR_FORM_CHILD, function (e) {
     e.stopPropagation();
   });
@@ -4650,12 +4650,12 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$4] = Dropdown._jQueryInterface;
+  $__default['default'].fn[NAME$4] = Dropdown._jQueryAdministrar;
   $__default['default'].fn[NAME$4].Constructor = Dropdown;
 
   $__default['default'].fn[NAME$4].noConflict = function () {
     $__default['default'].fn[NAME$4] = JQUERY_NO_CONFLICT$4;
-    return Dropdown._jQueryInterface;
+    return Dropdown._jQueryAdministrar;
   };
 
   /**
@@ -5184,7 +5184,7 @@
     } // Static
     ;
 
-    Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
+    Modal._jQueryAdministrar = function _jQueryAdministrar(config, relatedTarget) {
       return this.each(function () {
         var data = $__default['default'](this).data(DATA_KEY$5);
 
@@ -5257,7 +5257,7 @@
       });
     });
 
-    Modal._jQueryInterface.call($__default['default'](target), config, this);
+    Modal._jQueryAdministrar.call($__default['default'](target), config, this);
   });
   /**
    * ------------------------------------------------------------------------
@@ -5265,12 +5265,12 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$5] = Modal._jQueryInterface;
+  $__default['default'].fn[NAME$5] = Modal._jQueryAdministrar;
   $__default['default'].fn[NAME$5].Constructor = Modal;
 
   $__default['default'].fn[NAME$5].noConflict = function () {
     $__default['default'].fn[NAME$5] = JQUERY_NO_CONFLICT$5;
-    return Modal._jQueryInterface;
+    return Modal._jQueryAdministrar;
   };
 
   /**
@@ -6030,7 +6030,7 @@
     } // Static
     ;
 
-    Tooltip._jQueryInterface = function _jQueryInterface(config) {
+    Tooltip._jQueryAdministrar = function _jQueryAdministrar(config) {
       return this.each(function () {
         var $element = $__default['default'](this);
         var data = $element.data(DATA_KEY$6);
@@ -6102,12 +6102,12 @@
    */
 
 
-  $__default['default'].fn[NAME$6] = Tooltip._jQueryInterface;
+  $__default['default'].fn[NAME$6] = Tooltip._jQueryAdministrar;
   $__default['default'].fn[NAME$6].Constructor = Tooltip;
 
   $__default['default'].fn[NAME$6].noConflict = function () {
     $__default['default'].fn[NAME$6] = JQUERY_NO_CONFLICT$6;
-    return Tooltip._jQueryInterface;
+    return Tooltip._jQueryAdministrar;
   };
 
   /**
@@ -6210,7 +6210,7 @@
     } // Static
     ;
 
-    Popover._jQueryInterface = function _jQueryInterface(config) {
+    Popover._jQueryAdministrar = function _jQueryAdministrar(config) {
       return this.each(function () {
         var data = $__default['default'](this).data(DATA_KEY$7);
 
@@ -6282,12 +6282,12 @@
    */
 
 
-  $__default['default'].fn[NAME$7] = Popover._jQueryInterface;
+  $__default['default'].fn[NAME$7] = Popover._jQueryAdministrar;
   $__default['default'].fn[NAME$7].Constructor = Popover;
 
   $__default['default'].fn[NAME$7].noConflict = function () {
     $__default['default'].fn[NAME$7] = JQUERY_NO_CONFLICT$7;
-    return Popover._jQueryInterface;
+    return Popover._jQueryAdministrar;
   };
 
   /**
@@ -6516,7 +6516,7 @@
     } // Static
     ;
 
-    ScrollSpy._jQueryInterface = function _jQueryInterface(config) {
+    ScrollSpy._jQueryAdministrar = function _jQueryAdministrar(config) {
       return this.each(function () {
         var data = $__default['default'](this).data(DATA_KEY$8);
 
@@ -6565,7 +6565,7 @@
     for (var i = scrollSpysLength; i--;) {
       var $spy = $__default['default'](scrollSpys[i]);
 
-      ScrollSpy._jQueryInterface.call($spy, $spy.data());
+      ScrollSpy._jQueryAdministrar.call($spy, $spy.data());
     }
   });
   /**
@@ -6574,12 +6574,12 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$8] = ScrollSpy._jQueryInterface;
+  $__default['default'].fn[NAME$8] = ScrollSpy._jQueryAdministrar;
   $__default['default'].fn[NAME$8].Constructor = ScrollSpy;
 
   $__default['default'].fn[NAME$8].noConflict = function () {
     $__default['default'].fn[NAME$8] = JQUERY_NO_CONFLICT$8;
-    return ScrollSpy._jQueryInterface;
+    return ScrollSpy._jQueryAdministrar;
   };
 
   /**
@@ -6753,7 +6753,7 @@
     } // Static
     ;
 
-    Tab._jQueryInterface = function _jQueryInterface(config) {
+    Tab._jQueryAdministrar = function _jQueryAdministrar(config) {
       return this.each(function () {
         var $this = $__default['default'](this);
         var data = $this.data(DATA_KEY$9);
@@ -6792,7 +6792,7 @@
   $__default['default'](document).on(EVENT_CLICK_DATA_API$6, SELECTOR_DATA_TOGGLE$4, function (event) {
     event.preventDefault();
 
-    Tab._jQueryInterface.call($__default['default'](this), 'show');
+    Tab._jQueryAdministrar.call($__default['default'](this), 'show');
   });
   /**
    * ------------------------------------------------------------------------
@@ -6800,12 +6800,12 @@
    * ------------------------------------------------------------------------
    */
 
-  $__default['default'].fn[NAME$9] = Tab._jQueryInterface;
+  $__default['default'].fn[NAME$9] = Tab._jQueryAdministrar;
   $__default['default'].fn[NAME$9].Constructor = Tab;
 
   $__default['default'].fn[NAME$9].noConflict = function () {
     $__default['default'].fn[NAME$9] = JQUERY_NO_CONFLICT$9;
-    return Tab._jQueryInterface;
+    return Tab._jQueryAdministrar;
   };
 
   /**
@@ -6970,7 +6970,7 @@
     } // Static
     ;
 
-    Toast._jQueryInterface = function _jQueryInterface(config) {
+    Toast._jQueryAdministrar = function _jQueryAdministrar(config) {
       return this.each(function () {
         var $element = $__default['default'](this);
         var data = $element.data(DATA_KEY$a);
@@ -7018,12 +7018,12 @@
    */
 
 
-  $__default['default'].fn[NAME$a] = Toast._jQueryInterface;
+  $__default['default'].fn[NAME$a] = Toast._jQueryAdministrar;
   $__default['default'].fn[NAME$a].Constructor = Toast;
 
   $__default['default'].fn[NAME$a].noConflict = function () {
     $__default['default'].fn[NAME$a] = JQUERY_NO_CONFLICT$a;
-    return Toast._jQueryInterface;
+    return Toast._jQueryAdministrar;
   };
 
   exports.Alert = Alert;

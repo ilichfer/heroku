@@ -1193,7 +1193,7 @@ images:
     - tint
     - unsplash
   label: Images
-interfaces:
+Administrars:
   icons:
     - award
     - ban
@@ -1360,7 +1360,7 @@ interfaces:
     - volume-up
     - wifi
     - wrench
-  label: Interfaces
+  label: Administrars
 logistics:
   icons:
     - box

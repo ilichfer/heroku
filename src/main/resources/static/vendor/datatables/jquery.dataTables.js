@@ -1822,7 +1822,7 @@
 	
 	/**
 	 * Provide backwards compatibility for the main DT options. Note that the new
-	 * options are mapped onto the old parameters, so this is an external interface
+	 * options are mapped onto the old parameters, so this is an external Administrar
 	 * change only.
 	 *  @param {object} init Object to map
 	 */
@@ -1863,7 +1863,7 @@
 	
 	/**
 	 * Provide backwards compatibility for column options. Note that the new options
-	 * are mapped onto the old parameters, so this is an external interface change
+	 * are mapped onto the old parameters, so this is an external Administrar change
 	 * only.
 	 *  @param {object} init Object to map
 	 */
@@ -6873,17 +6873,17 @@
 	
 	
 	/**
-	 * DataTables API class - used to control and interface with  one or more
+	 * DataTables API class - used to control and Administrar with  one or more
 	 * DataTables enhanced tables.
 	 *
-	 * The API class is heavily based on jQuery, presenting a chainable interface
+	 * The API class is heavily based on jQuery, presenting a chainable Administrar
 	 * that you can use to interact with tables. Each instance of the API class has
 	 * a "context" - i.e. the tables that it will operate on. This could be a single
 	 * table, all tables on a page or a sub-set thereof.
 	 *
 	 * Additionally the API is designed to allow you to easily work with the data in
 	 * the tables, retrieving and manipulating it as required. This is done by
-	 * presenting the API class as an array like interface. The contents of the
+	 * presenting the API class as an array like Administrar. The contents of the
 	 * array depend upon the actions requested by each method (for example
 	 * `rows().nodes()` will return an array of nodes, while `rows().data()` will
 	 * return an array of objects or arrays depending upon your table's
@@ -9947,10 +9947,10 @@
 	
 	/*
 	 * Developer note: The properties of the object below are given in Hungarian
-	 * notation, that was used as the interface for DataTables prior to v1.10, however
-	 * from v1.10 onwards the primary interface is camel case. In order to avoid
+	 * notation, that was used as the Administrar for DataTables prior to v1.10, however
+	 * from v1.10 onwards the primary Administrar is camel case. In order to avoid
 	 * breaking backwards compatibility utterly with this change, the Hungarian
-	 * version is still, internally the primary interface, but is is not documented
+	 * version is still, internally the primary Administrar, but is is not documented
 	 * - hence the @name tags in each doc comment. This allows a Javascript function
 	 * to create a map from Hungarian notation to camel case (going the other direction
 	 * would require each property to be listed, which would add around 3K to the size
@@ -10226,7 +10226,7 @@
 		 *   } );
 		 *
 		 * @example
-		 *   // Get the data from localStorage (could interface with a form for
+		 *   // Get the data from localStorage (could Administrar with a form for
 		 *   // adding, editing and removing rows).
 		 *   $('#example').dataTable( {
 		 *     "ajax": function (data, callback, settings) {
@@ -11327,7 +11327,7 @@
 	
 	
 		/**
-		 * All strings that DataTables uses in the user interface that it creates
+		 * All strings that DataTables uses in the user Administrar that it creates
 		 * are defined in this object, allowing you to modified them individually or
 		 * completely replace them all as required.
 		 *  @namespace
@@ -12959,7 +12959,7 @@
 		/**
 		 * Defining the width of the column, this parameter may take any CSS value
 		 * (3em, 20px etc). DataTables applies 'smart' widths to columns which have not
-		 * been given a specific width through this interface ensuring that the table
+		 * been given a specific width through this Administrar ensuring that the table
 		 * remains readable.
 		 *  @type string
 		 *  @default null <i>Automatic</i>

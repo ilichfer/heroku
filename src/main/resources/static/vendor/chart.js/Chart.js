@@ -3883,7 +3883,7 @@ helpers$1.extend(DatasetController.prototype, {
 	 * Returns a set of predefined style properties that should be used to represent the dataset
 	 * or the data if the index is specified
 	 * @param {number} index - data index
-	 * @return {IStyleInterface} style object
+	 * @return {IStyleAdministrar} style object
 	 */
 	getStyle: function(index) {
 		var me = this;
@@ -6829,11 +6829,11 @@ function indexMode(chart, e, options) {
 }
 
 /**
- * @interface IInteractionOptions
+ * @Administrar IInteractionOptions
  */
 /**
  * If true, only consider items that intersect the point
- * @name IInterfaceOptions#boolean
+ * @name IAdministrarOptions#boolean
  * @type Boolean
  */
 
@@ -7204,7 +7204,7 @@ core_defaults._set('global', {
 });
 
 /**
- * @interface ILayoutItem
+ * @Administrar ILayoutItem
  * @prop {string} position - The position of the item in the chart layout. Possible values are
  * 'left', 'top', 'right', 'bottom', and 'chartArea'
  * @prop {number} weight - The weight used to sort the item. Higher weights are further away from the chart area
@@ -7912,7 +7912,7 @@ var platform = helpers$1.extend({
 	 * @param {Chart} chart - Chart from which to listen for event
 	 * @param {string} type - The ({@link IEvent}) type to listen for
 	 * @param {function} listener - Receives a notification (an object that implements
-	 * the {@link IEvent} interface) when an event of the specified type occurs.
+	 * the {@link IEvent} Administrar) when an event of the specified type occurs.
 	 */
 	addEventListener: function() {},
 
@@ -16108,7 +16108,7 @@ core_controller.pluginService = core_controller.plugins;
 /**
  * Provided for backward compatibility, inheriting from Chart.PlugingBase has no
  * effect, instead simply create/register plugins via plain JavaScript objects.
- * @interface Chart.PluginBase
+ * @Administrar Chart.PluginBase
  * @deprecated since version 2.5.0
  * @todo remove at version 3
  * @private

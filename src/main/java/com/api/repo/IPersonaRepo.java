@@ -7,6 +7,6 @@ import com.api.model.Persona;
 
 public interface IPersonaRepo extends JpaRepository<Persona, Integer>{
 
-    @Query(nativeQuery = false,value = " SELECT c FROM Persona c WHERE Email = ?1")
-    Persona findPersonaByEmail(String doc);
+//    @Query(nativeQuery = false,value = " SELECT c FROM Persona c WHERE Email = ?1")
+//    Persona findPersonaByEmail(String doc);
 }
